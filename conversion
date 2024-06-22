@@ -1,0 +1,51 @@
+package lab;
+
+public class conversion {
+	    public static void main(String[] args) {
+	        System.out.println("Implicit Conversion (Widening):");
+	        byte byteValue = 42;
+	        short shortValue = byteValue;
+	        int intValue = shortValue;
+	        long longValue = intValue;
+	        float floatValue = longValue;
+	        double doubleValue = floatValue;
+
+	        System.out.println("byte to short: " + shortValue);
+	        System.out.println("short to int: " + intValue);
+	        System.out.println("int to long: " + longValue);
+	        System.out.println("long to float: " + floatValue);
+	        System.out.println("float to double: " + doubleValue);
+
+	        System.out.println("\nExplicit Conversion (Narrowing):");
+	        double largeDouble = 123.456;
+	        float narrowFloat = (float) largeDouble;
+	        long narrowLong = (long) narrowFloat;
+	        int narrowInt = (int) narrowLong;
+	        short narrowShort = (short) narrowInt;
+	        byte narrowByte = (byte) narrowShort;
+
+	        System.out.println("double to float: " + narrowFloat);
+	        System.out.println("float to long: " + narrowLong);
+	        System.out.println("long to int: " + narrowInt);
+	        System.out.println("int to short: " + narrowShort);
+	        System.out.println("short to byte: " + narrowByte);
+
+	        System.out.println("\nOverflow and Underflow:");
+	        
+	        byte byteMax = 127;
+	        byte overflowByte = (byte) (byteMax + 1);
+	        System.out.println("Overflow byte: " + overflowByte);
+
+	        byte byteMin = -128;
+	        byte underflowByte = (byte) (byteMin - 1);
+	        System.out.println("Underflow byte: " + underflowByte);
+
+	        int intMax = Integer.MAX_VALUE;
+	        int overflowInt = intMax + 1;
+	        System.out.println("Overflow int: " + overflowInt);
+
+	        int intMin = Integer.MIN_VALUE;
+	        int underflowInt = intMin - 1;
+	        System.out.println("Underflow int: " + underflowInt);
+	    }
+	}
