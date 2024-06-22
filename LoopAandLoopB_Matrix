@@ -1,0 +1,31 @@
+package lab;
+
+public class LoopAandLoopB_Matrix {
+	public static void main(String[] args) {
+        int size = 9;
+        int[][] matrixA = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrixA[i][j] = j + 1; 
+            }
+        }
+        int[][] matrixB = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrixB[i][j] = size - j; 
+            }
+        }
+        System.out.println("Matrix A:");
+        printMatrix(matrixA);
+        System.out.println("\nMatrix B:");
+        printMatrix(matrixB);
+    }
+    public static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
