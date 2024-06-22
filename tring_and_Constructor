@@ -1,0 +1,47 @@
+package lab;
+
+public class String_and_Constructor {
+	public static void main(String[] args) {
+        String str1 = "Hello"; 
+        char[] charArray = {'W', 'o', 'r', 'l', 'd'};
+        String str2 = new String(charArray); 
+        String str3 = new String("Java"); 
+        System.out.println("String Length:");
+        System.out.println("Length of str1: " + str1.length()); 
+        System.out.println("Length of str2: " + str2.length());
+        System.out.println("Length of str3: " + str3.length());
+
+        System.out.println("\nConcatenation:");
+        String concatStr = str1.concat(" ").concat(str2); 
+        System.out.println("Concatenated string: " + concatStr);
+
+        System.out.println("\nSubstring:");
+        String substringStr = str3.substring(1, 3); 
+        System.out.println("Substring of str3: " + substringStr);
+
+        System.out.println("\nCharacter extraction:");
+        char charAt2 = str2.charAt(2); 
+        System.out.println("Character at index 2 in str2: " + charAt2);
+
+        System.out.println("\nUppercase and Lowercase:");
+        System.out.println("Uppercase of str1: " + str1.toUpperCase()); 
+        System.out.println("Lowercase of str2: " + str2.toLowerCase()); 
+
+        System.out.println("\nEquality check:");
+        boolean isEqual = str1.equals("Hello"); 
+        System.out.println("Is str1 equal to \"Hello\"? " + isEqual);
+
+        System.out.println("\nIndex of:");
+        int indexOfW = str2.indexOf('W'); 
+        System.out.println("Index of 'W' in str2: " + indexOfW);
+
+        System.out.println("\nReplacing characters:");
+        String replacedStr = str3.replace('a', 'i'); 
+        System.out.println("After replacing 'a' with 'i' in str3: " + replacedStr);
+
+        System.out.println("\nTrimming whitespace:");
+        String strWithSpaces = "   Trim this string   ";
+        String trimmedStr = strWithSpaces.trim(); 
+        System.out.println("Trimmed string: \"" + trimmedStr + "\"");
+    }
+}
