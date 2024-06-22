@@ -1,0 +1,19 @@
+package lab;
+import java.util.Arrays;
+public class Matrix2d {
+    public static void main(String[] args) {
+        int rows = 3;
+        int cols = 4;
+        int[][] matrix = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            Arrays.fill(matrix[i], i + 1); 
+        }
+        System.out.println("2D Matrix:");
+        printMatrix(matrix);
+    }
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+}
