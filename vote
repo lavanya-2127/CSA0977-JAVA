@@ -1,0 +1,19 @@
+package sample;
+import java.util.*;
+public class Vote {
+	public static void main(String args[])
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Age");
+		int age=sc.nextInt();
+		int diff;
+		if(age>=18)
+			System.out.println("u are eligible for voting");	
+		else
+			System.out.println("u are not eligible for voting");{
+			diff=18-age;
+	        System.out.println("u can vote after "+diff +" years");}
+			
+}
+	
+}
