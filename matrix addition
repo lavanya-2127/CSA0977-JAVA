@@ -1,0 +1,53 @@
+package sample;
+import java.util.*;
+public class Matrixadd {
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter no of rows in a matrix ");
+		int rows=sc.nextInt();
+		System.out.println("enterr no of cols in a matrix ");
+		int cols=sc.nextInt();
+		
+		int[][] matrix1 = new int[rows][cols];
+		int[][] matrix2 = new int[rows][cols];
+		int[][] resultmatrix = new int[rows][cols];
+		
+		System.out.println("enter the elements in the first matrix1");
+		
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.println("element ["+ i+"]["+j+"]:");
+				matrix1[i][j]=sc.nextInt();
+			}
+		}
+        System.out.println("enter the elements in the first matrix2");
+		
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.println("element ["+ i+"]["+j+"]:");
+				matrix2[i][j]=sc.nextInt();
+			}
+    	}
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				resultmatrix[i][j]=matrix1[i][j]+matrix2[i][j];
+			}
+    	}
+		System.out.println("result matrix");
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.println(resultmatrix[i][j]+"/t");
+			}
+		System.out.println( );
+	}
+}
+}
