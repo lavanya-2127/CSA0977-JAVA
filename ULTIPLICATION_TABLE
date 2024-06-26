@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class MULTIPLICATION_TABLE {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number: ");
+        int m = scanner.nextInt();
+
+        System.out.print("Enter the limit: ");
+        int n = scanner.nextInt();
+
+        System.out.println("Multiplication Table of " + m + " up to " + n + ":");
+        for (int i = 1; i <= n; i++) {
+            System.out.println(m + " x " + i + " = " + (m * i));
+        }
+    }
+}
