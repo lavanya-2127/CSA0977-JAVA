@@ -1,0 +1,62 @@
+package sample;
+import java.util.Scanner;
+public class DECI_TO_BIN_AND_OCT {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Enter a decimal number: ");
+	        String input = scanner.nextLine();
+	        if (isValidDecimal(input)) {
+	            if (input.contains(".")) {
+	                double decimalNumber = Double.parseDouble(input);
+	                String binaryRepresentation = convertDecimalToBinary(decimalNumber);
+	                String octalRepresentation = convertDecimalToOctal(decimalNumber);
+	                System.out.println("Binary Number = " + binaryRepresentation);
+	                System.out.println("Octal = " + octalRepresentation);
+	            } else {
+	                int decimalNumber = Integer.parseInt(input);
+	                String binaryRepresentation = Integer.toBinaryString(decimalNumber);
+	                String octalRepresentation = Integer.toOctalString(decimalNumber);
+	                System.out.println("Binary Number = " + binaryRepresentation);
+	                System.out.println("Octal = " + octalRepresentation);
+	            }
+	        } else {
+	            System.out.println("Invalid input. Please enter a valid decimal number.");
+	        }
+	    }
+	    public static boolean isValidDecimal(String input) {
+	        return input.matches("-?\\d+(\\.\\d+)?");
+	    }
+	    public static String convertDecimalToBinary(double decimalNumber) {
+	        int integerPart = (int) decimalNumber;
+	        double fractionalPart = decimalNumber - integerPart;
+
+	        String binaryIntegerPart = Integer.toBinaryString(integerPart);
+	        StringBuilder binaryFractionalPart = new StringBuilder(".");
+
+	        while (fractionalPart > 0) {
+	            fractionalPart *= 2;
+	            int bit = (int) fractionalPart;
+	            binaryFractionalPart.append(bit);
+	            fractionalPart -= bit;
+	            if (binaryFractionalPart.length() > 10) break;
+	        }
+	        return binaryIntegerPart + binaryFractionalPart.toString();
+	    }
+	    public static String convertDecimalToOctal(double decimalNumber) {
+	        int integerPart = (int) decimalNumber;
+	        double fractionalPart = decimalNumber - integerPart;
+
+	        String octalIntegerPart = Integer.toOctalString(integerPart);
+	        StringBuilder octalFractionalPart = new StringBuilder(".");
+
+	        while (fractionalPart > 0) {
+	            fractionalPart *= 8;
+	            int digit = (int) fractionalPart;
+	            octalFractionalPart.append(digit);
+	            fractionalPart -= digit;
+	            if (octalFractionalPart.length() > 10) break;
+	        }
+	        return octalIntegerPart + octalFractionalPart.toString();
+	    }
+	}
