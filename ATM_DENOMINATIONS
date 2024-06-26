@@ -1,0 +1,35 @@
+package sample;
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+public class ATM_DENOMINATIONS {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        int[] denominations = {2000, 500, 200, 100};
+	        Map<Integer, Integer> denominationCount = new HashMap<>();
+	        int totalBalance = 0;
+	        for (int i = 1; i <= 4; i++) {
+	            System.out.print("Enter the " + i + "st Denomination: ");
+	            int denomination = scanner.nextInt();
+	            if (!isValidDenomination(denomination, denominations)) {
+	                System.out.println("Invalid denomination entered. Please enter one of the following denominations: 2000, 500, 200, 100");
+	                i--; 
+	                continue;
+	            }
+	            System.out.print("Enter the " + i + "st Denomination number of notes: ");
+	            int numOfNotes = scanner.nextInt();
+	            denominationCount.put(denomination, numOfNotes);
+	            totalBalance += denomination * numOfNotes;
+	        }
+	        System.out.println("Total Available Balance in ATM: " + totalBalance);
+	    }
+	    public static boolean isValidDenomination(int denomination, int[] validDenominations) {
+	        for (int validDenomination : validDenominations) {
+	            if (denomination == validDenomination) {
+	                return true;
+	            }
+	        }
+	        return false;
+	    }
+	}
+
