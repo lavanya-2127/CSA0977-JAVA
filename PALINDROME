@@ -1,0 +1,58 @@
+package sample;
+import java.util.Scanner;
+public class PALINDROME {
+	
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        System.out.println("Choose an option:");
+	        System.out.println("1: Check if a string is a palindrome");
+	        System.out.println("2: Check if a number is a palindrome");
+	        System.out.print("Enter your choice (1 or 2): ");
+	        int choice = scanner.nextInt();
+	        scanner.nextLine();	       
+	        switch (choice) {
+	            case 1:
+	                System.out.print("Enter a string: ");
+	                String str = scanner.nextLine();
+	                if (isPalindromeString(str)) {
+	                    System.out.println("Palindrome");
+	                } else {
+	                    System.out.println("Not a Palindrome");
+	                }
+	                break;
+
+	            case 2:
+	                System.out.print("Enter a number: ");
+	                int num = scanner.nextInt();
+	                if (isPalindromeNumber(num)) {
+	                    System.out.println("Palindrome");
+	                } else {
+	                    System.out.println("Not a Palindrome");
+	                }
+	                break;
+
+	            default:
+	                System.out.println("Invalid choice. Please enter 1 or 2.");
+	        }
+	    }
+	    public static boolean isPalindromeString(String str) {
+	        int len = str.length();
+	        for (int i = 0; i < len / 2; i++) {
+	            if (str.charAt(i) != str.charAt(len - i - 1)) {
+	                return false;
+	            }
+	        }
+	        return true;
+	    }
+	    public static boolean isPalindromeNumber(int num) {
+	        int originalNum = num;
+	        int reversedNum = 0;
+	        while (num != 0) {
+	            int digit = num % 10;
+	            reversedNum = reversedNum * 10 + digit;
+	            num /= 10;
+	        }
+	        return originalNum == reversedNum;
+	    }
+	}
+
